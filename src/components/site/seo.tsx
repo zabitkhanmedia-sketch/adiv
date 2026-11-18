@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 // قم بتحديث رابط الموقع الجديد هنا
-const SITE_URL = "https://emiratessecure.com/";
+const SITE_URL = "https://uae-assistants.com/";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 interface SeoProps {

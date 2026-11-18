@@ -70,12 +70,12 @@ export function Footer() {
             <li><Link to="/terms" className={linkClass}>الشروط والأحكام</Link></li>
             <li>
               <a
-                href="mailto:emiratessecure@gmail.com"
+                href="mailto:uae-assistants@gmail.com"
                 className="inline-flex items-center gap-2.5 rounded-full border border-gold/30 bg-gold/10 px-4 py-2 transition-colors hover:border-gold hover:bg-gold/20 focus-visible:border-gold"
                 dir="ltr"
               >
                 <Mail className="h-4 w-4 shrink-0 text-gold-light" aria-hidden="true" />
-                <span className="text-xs font-semibold text-gold-light">emiratessecure@gmail.com</span>
+                <span className="text-xs font-semibold text-gold-light">uae-assistants@gmail.com</span>
               </a>
             </li>
           </ul>
