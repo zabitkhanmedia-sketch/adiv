@@ -1,0 +1,376 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Local Font Declarations (Tajawal Self-Hosted)
+   - latin: للأرقام والإنجليزي
+   - arabic: للنصوص العربية (ضروري، بدونه يرجع الخط لخط النظام)
+   ========================================================================== */
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/tajawal-v12-arabic-regular.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+200C-200E;
+}
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/tajawal-v12-arabic-500.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+200C-200E;
+}
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/tajawal-v12-arabic-700.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+200C-200E;
+}
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/tajawal-v12-arabic-800.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+200C-200E;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/tajawal-v12-latin-regular.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/tajawal-v12-latin-500.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/tajawal-v12-latin-700.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/tajawal-v12-latin-800.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@theme {
+  /* ==========================================================================
+     Brand Palette: Navy + Gold (كحلي وذهبي رسمي)
+     الاستخدام في المكونات: bg-navy, text-gold, border-gold/40, ...
+     ========================================================================== */
+  --color-navy-950: #070D1A;
+  --color-navy: #0B1426;           /* الكحلي الرئيسي (خلفيات الهيرو والأقسام الداكنة) */
+  --color-navy-800: #111C33;
+  --color-navy-700: #1A2742;
+  --color-navy-600: #26365A;
+
+  --color-gold: #C9A45C;           /* الذهبي الرئيسي */
+  --color-gold-hover: #D9B874;     /* hover للأزرار الذهبية */
+  --color-gold-light: #E4CB94;     /* نصوص وأرقام ذهبية على الكحلي */
+  --color-gold-lighter: #F1D9A0;   /* لمعات ونقاط مضيئة */
+  --color-gold-dark: #A8863F;      /* ذهبي على خلفية فاتحة (نصوص/أيقونات) */
+
+  --color-blue-glow: #3B5CA0;      /* إضاءة زرقاء خافتة للخلفيات */
+
+  /* Functional / status colors */
+  --color-success: #1E7F5C;
+  --color-processing: #3B5CA0;
+  --color-urgent: #B42318;
+  --color-error: #B42318;
+
+  /* Semantic tokens */
+  --color-background: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-card: #FFFFFF;
+  --color-card-foreground: #0B1426;
+  --color-foreground: #0B1426;
+  --color-muted: #F5F6F8;
+  --color-muted-foreground: #64708A;
+  --color-secondary: #F5F6F8;
+  --color-secondary-foreground: #0B1426;
+
+  /* Primary = كحلي (أزرار على الخلفيات الفاتحة)، Accent = ذهبي (أزرار على الداكنة) */
+  --color-primary: #0B1426;
+  --color-primary-foreground: #FFFFFF;
+  --color-accent: #C9A45C;
+  --color-accent-foreground: #0B1426;
+  --color-highlight: #E4CB94;
+  --color-border: #E3E6EC;
+  --color-ring: #C9A45C;
+
+  /* أسماء قديمة محفوظة للتوافق مع المكونات الحالية */
+  --color-slate-navy: #0B1426;
+  --color-slate-dark: #070D1A;
+  --color-gold-amber: #C9A45C;
+  --color-gold-accent: #D9B874;
+
+  --font-sans: "Tajawal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Tajawal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --radius: 1rem;
+  --radius-card: 2rem;             /* بطاقات كبيرة (لوحة اللوغو، بطاقة الفورم) */
+
+  /* الظلال */
+  --shadow-soft: 0 10px 30px -10px rgba(11, 20, 38, 0.08);
+  --shadow-card: 0 20px 40px -15px rgba(11, 20, 38, 0.12);
+  --shadow-glow: 0 15px 35px -10px rgba(11, 20, 38, 0.22);
+  --shadow-gold: 0 12px 30px -12px rgba(201, 164, 92, 0.7);
+  --shadow-panel: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: 1.25;
+    /* ملاحظة: letter-spacing سالب بيقطع اتصال الحروف العربية، لذلك مصفّر */
+    letter-spacing: 0;
+  }
+
+  ::selection {
+    background-color: var(--color-gold);
+    color: var(--color-navy);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+}
+
+/* ==========================================================================
+   Page Container Utility
+   ========================================================================== */
+@utility container-page {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-page {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-page {
+    padding-inline: 3.5rem;
+  }
+}
+
+@layer utilities {
+  /* ---------- أسطح زجاجية ---------- */
+  .glass {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(11, 20, 38, 0.08);
+  }
+
+  .glass-dark {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* ---------- تدرجات النص ---------- */
+  .text-gradient {
+    background: linear-gradient(135deg, #0B1426 30%, #26365A 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #F1D9A0 0%, #C9A45C 60%, #A8863F 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* ---------- القسم الداكن الموحّد (هيرو + فورم + أي قسم داكن) ---------- */
+  .section-navy {
+    position: relative;
+    background-color: var(--color-navy);
+    color: #FFFFFF;
+    overflow: hidden;
+  }
+  .section-navy::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(60% 60% at 20% 30%, rgba(201, 164, 92, 0.14), transparent 70%),
+      radial-gradient(50% 50% at 90% 80%, rgba(59, 92, 160, 0.25), transparent 70%);
+  }
+  .section-navy > * {
+    position: relative;
+  }
+
+  /* خط ذهبي رسمي أعلى القسم */
+  .gold-top-line::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 3px;
+    background: linear-gradient(to left, transparent, var(--color-gold), transparent);
+  }
+
+  /* فاصل ذهبي رفيع */
+  .gold-rule {
+    height: 1px;
+    background: linear-gradient(to left, var(--color-gold), transparent);
+  }
+
+  /* لوحة اللوغو / البطاقات الكبيرة مع إطار ذهبي مزاح */
+  .panel-frame {
+    position: relative;
+    border-radius: var(--radius-card);
+    background: #FFFFFF;
+    box-shadow: var(--shadow-panel);
+  }
+  .panel-frame::before {
+    content: "";
+    position: absolute;
+    inset: -0.75rem;
+    border-radius: calc(var(--radius-card) + 0.25rem);
+    border: 1px solid rgba(201, 164, 92, 0.4);
+    pointer-events: none;
+  }
+
+  .mesh-bg {
+    background-color: var(--color-background);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ---------- حالات الشكاوى ---------- */
+  .status-success {
+    background-color: #E8F5EF;
+    color: #14634A;
+    border: 1px solid #BFE3D3;
+  }
+  .status-processing {
+    background-color: #EBF0FA;
+    color: #2C4A86;
+    border: 1px solid #C8D5EE;
+  }
+  .status-urgent {
+    background-color: #FDECEA;
+    color: #B42318;
+    border: 1px solid #F5C2BD;
+  }
+
+  /* ---------- أخطاء التنسيق ---------- */
+  .form-error {
+    color: var(--color-error);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-top: 0.375rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .input-error {
+    border-color: var(--color-error) !important;
+  }
+  .input-error:focus {
+    outline-color: var(--color-error) !important;
+  }
+}
+
+/* ==========================================================================
+   Animations (تُعطّل تلقائياً عند تفعيل "تقليل الحركة")
+   ========================================================================== */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes sweep {
+  0%, 55% { transform: translateX(-160%) skewX(-12deg); }
+  100% { transform: translateX(520%) skewX(-12deg); }
+}
+
+@keyframes shine {
+  0%, 60% { transform: translateX(-160%) skewX(-20deg); }
+  100% { transform: translateX(420%) skewX(-20deg); }
+}
+
+@keyframes orbit-travel {
+  to { offset-distance: 100%; }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+/* لمعة تمر على اللوحة البيضاء */
+.animate-sweep {
+  animation: sweep 7s ease-in-out 1.6s infinite;
+}
+
+/* لمعة تمر على الزر الذهبي */
+.animate-shine {
+  animation: shine 5s ease-in-out 2s infinite;
+}
+
+/* نقطة ذهبية تدور على إطار اللوحة (استخدمها داخل حاوية inset سالب) */
+.animate-orbit {
+  offset-path: inset(0 round 2.25rem);
+  offset-rotate: 0deg;
+  animation: orbit-travel 9s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
